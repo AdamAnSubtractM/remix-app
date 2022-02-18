@@ -1,6 +1,16 @@
+import { getData } from '~/dashboardData';
+import { useLoaderData } from 'remix';
+
+export const loader = async () => {
+  return getData();
+}
+
 export default function Index() {
+  const data = useLoaderData();
+  console.log({data})
   return (
     <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
+      {console.log({data})}
       <h1>Welcome to Remix</h1>
       <ul>
         <li>
